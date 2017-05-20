@@ -11,12 +11,6 @@ meta
 https://josm.openstreetmap.de/wiki/Help/Styles/MapCSSImplementation
 */
 
-meta[lang=de]
-{
-    title: "Stop positions";
-    description: "Map-Paint-Stil zum Hervorheben des Tags public_transport nach Public Transport Version 2";
-}
-
 way[highway] {
     text-position: line;
     text: concat("[",tag(highway),"]");
