@@ -1,0 +1,74 @@
+meta 
+{
+    title: "Africa";
+    description: "Highlight features relevant to rurle afrca";
+    version: "1";
+    author: "bjohas";
+    link: "";
+}
+
+/*
+https://josm.openstreetmap.de/wiki/Help/Styles/MapCSSImplementation
+*/
+
+meta[lang=de]
+{
+    title: "Stop positions";
+    description: "Map-Paint-Stil zum Hervorheben des Tags public_transport nach Public Transport Version 2";
+}
+
+way[highway] {
+    text-position: line;
+    text: concat("[",tag(highway),"]");
+}
+
+way[highway=residential] {
+	width: 3;
+	dashes: none;
+	color: #ffaaff;
+	opacity: 1.0;
+}
+
+way[highway=path] {
+	width: 3;
+	color: blue;
+	casing-width: 3;
+	casing-color: white;
+	casing-opacity: 0.3;
+}
+
+way[highway=track] {
+	width: 3;
+	color: green;
+	dashes: none;
+	casing-width: 3;
+	casing-color: white;
+	casing-opacity: 0.3;
+}
+
+way[highway][!surface] {
+    text-halo-color: pink;
+    text-halo-radius: 8;
+    text-halo-opacity: 0.8;
+    text: concat("[",tag(highway),"] NO SURFACE");
+}
+
+way[highway][surface=paved] {
+    text-halo-color: grey;
+}
+
+way[highway][surface=unpaved] {
+    text-halo-color: lightblue;
+}
+
+
+area[landuse=residential] {
+	width: 3;
+	color: blue;
+}
+
+area|z-14[landuse=residential]  {
+	fill-color: blue;
+	fill-opacity: 0.3;
+	fill-extent: 50;
+}
