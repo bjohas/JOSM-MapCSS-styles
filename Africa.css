@@ -1,9 +1,9 @@
 meta 
 {
     title: "Africa";
-    description: "Highlight features relevant to rurle afrca";
+    description: "Highlight features relevant to rural Africa for MissingMaps campaigns. Details see https://github.com/bjohas/JOSM-MapCSS-styles.";
     version: "1";
-    author: "bjohas";
+    author: "bjohas, http://bjohas.de";
     link: "";
 }
 
@@ -66,7 +66,7 @@ area[landuse=residential] {
 	width: 3;
 	color: blue;
 }
-
+/* z-18 */
 area|z-14[landuse=residential]  {
 	fill-color: blue;
 	fill-opacity: 0.3;
