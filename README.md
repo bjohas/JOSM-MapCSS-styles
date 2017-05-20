@@ -16,5 +16,6 @@ Used initially for "Salima District Malawi Road Network" HOTOSM task.
 - highway=residential: light purple (to distinguish from unclassified)
 - highway=track: solid green line with white halo (as they are at the same level as unclassified)
 - highway=path: blue (not passable by vehicle, but passable by people)
-- Highways that don't have a surface tag are highlighted in pink. Text halo: Surface=unpaved->blue; surface=paved->grey.
+- Highways that don't have a surface tag have label highlighted in pink, with "NO SURFACE" added.
+- Highways that have surface tag, text halo: surface=unpaved->blue; surface=paved->greyish/white.
 - landuse=residential: blue outline, with halo at lower z to improve visibility
