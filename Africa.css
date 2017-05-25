@@ -11,24 +11,19 @@ meta
 https://josm.openstreetmap.de/wiki/Help/Styles/MapCSSImplementation
 */
 
+/* label highways with road type 
 way[highway] {
     text-position: line;
-    text: concat("[",tag(highway),"]");
+    text: concat(tag(name)," [",tag(highway),"]");
 }
+*/
 
+/* Alternative colours to distinguish unclassified/residential/track */
 way[highway=residential] {
 	width: 3;
 	dashes: none;
 	color: #ffaaff;
 	opacity: 1.0;
-}
-
-way[highway=path] {
-	width: 3;
-	color: blue;
-	casing-width: 3;
-	casing-color: white;
-	casing-opacity: 0.3;
 }
 
 way[highway=track] {
@@ -40,11 +35,20 @@ way[highway=track] {
 	casing-opacity: 0.3;
 }
 
+way[highway=path] {
+	width: 3;
+	color: blue;
+	casing-width: 3;
+	casing-color: white;
+	casing-opacity: 0.3;
+}
+
+/* In case surface mapping is required: */
 way[highway][!surface] {
     text-halo-color: pink;
     text-halo-radius: 8;
     text-halo-opacity: 0.8;
-    text: concat("[",tag(highway),"] NO SURFACE");
+    text: concat(tag(name)," [",tag(highway),"] NO SURFACE");
 }
 
 way[highway][surface=paved] {
@@ -65,4 +69,29 @@ area|z-14[landuse=residential]  {
 	fill-color: blue;
 	fill-opacity: 0.3;
 	fill-extent: 50;
+}
+
+node|z-14[building] {
+	icon-image: none;
+	symbol-shape: circle;
+	symbol-fill-color: blue;
+	symbol-stroke-color: blue;
+	symbol-stroke-width: 5;
+	symbol-fill-opacity: 0.2;
+	symbol-size: 3;
+}
+
+node|z15-[building] {
+	icon-image: none;
+	symbol-shape: circle;
+	symbol-fill-color: blue;
+	symbol-stroke-color: blue;
+	symbol-stroke-width: 3;
+	symbol-fill-opacity: 0.2;
+	symbol-size: 20;
+}
+
+way[building] {
+    color: blue;
+    width: 3;
 }
